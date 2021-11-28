@@ -25,4 +25,4 @@ In the project directory, you can run:
  - each feature should have it's own actions, reducers and types file
 
 ## Additional info
- - I created a github workflow job that runs automatically on push and pull requests to the main branch
+ - I created a github workflow job that runs automatically on push and pull requests to the main branch, for now it does a `build` and `test:coverage` script.
