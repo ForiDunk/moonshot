@@ -10,10 +10,14 @@ export const getUpcomingLaunches = (options?: {}) => async (dispatch: any) => {
   dispatch({ type: GET_UPCOMING_LAUNCHES_REQUEST });
 
   try {
-  const data = await fetch(`${LAUNCHES_API}/launch/upcoming`, options)
+  const data = await fetch(`${LAUNCHES_API}/launch/upcoming/`, options)
+    if (data.status >= 400) {
+      console.error(data);
+      throw new Error('something went wrong');
+    }
     dispatch({ type: GET_UPCOMING_LAUNCHES_SUCCESS, payload: data })
   } catch(error) {
-    dispatch({ type: GET_UPCOMING_LAUNCHES_FAIL, payload: error })
+    dispatch({ type: GET_UPCOMING_LAUNCHES_FAIL, payload: error?.message || 'something went wrong' })
   }
 };
 
