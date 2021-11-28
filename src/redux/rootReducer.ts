@@ -1,4 +1,4 @@
-import { combineReducers } from 'redux';
-import { launchesReducer } from './reducers/launchesReducer';
+import { combineReducers } from 'redux'
+import { launchesReducer } from './reducers/launchesReducer'
 
-export default combineReducers({ launchesReducer });
+export default combineReducers({ launchesReducer })
